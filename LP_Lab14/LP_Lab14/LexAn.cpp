@@ -48,8 +48,7 @@ namespace Lex
 		int countMain = 0;
 		bool findDec = false;
 		bool findType = false;
-
-
+		int bufPos = 0;
 
 		char emptystr[] = "";	// пустая строка
 		char* prefix = new  char[10]{ "" };	// текущий префикс
@@ -178,6 +177,7 @@ namespace Lex
 			findDec = false;
 			if (findParm) {		// если параметр
 			entryIT.idtype = IT::P;
+			idtable.table[bufPos].countOfPar++;
 			strcpy(entryIT.visibility, prefix);
 			}
 			else if (!findFunc) {	// если переменная
@@ -327,6 +327,7 @@ namespace Lex
 				LT::Add(lextable, entryLT);
 				if (idtable.table[indexID - 1].idtype == IT::F)
 					findParm = true;
+				bufPos = indexID - 1;
 				continue;
 			}
 			FST::FST fstRightThesis(word[i], FST_RIGHTTHESIS);
@@ -358,7 +359,7 @@ namespace Lex
 		}
 		if(!findMain) throw ERROR_THROW(2);
 		if (countMain > 1) throw ERROR_THROW(3);
-
+		cout << idtable.table[lextable.table[2].idxTI].countOfPar;
 		lex.idtable = idtable;
 		lex.lextable = lextable;
 		return lex;

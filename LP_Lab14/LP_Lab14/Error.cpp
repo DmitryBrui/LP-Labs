@@ -28,7 +28,11 @@ namespace Error
 		ERROR_ENTRY(160, "Превышен максимальный размер таблицы идентификаторов"),ERROR_ENTRY(161, "Таблица идентификаторов переполнена"),ERROR_ENTRY_NODEF(170),ERROR_ENTRY_NODEF(180),ERROR_ENTRY_NODEF(190),
 		ERROR_ENTRY_NODEF(105),ERROR_ENTRY_NODEF(105),ERROR_ENTRY_NODEF(105),ERROR_ENTRY_NODEF(105),
 		ERROR_ENTRY_NODEF(200),ERROR_ENTRY_NODEF(300),ERROR_ENTRY_NODEF(400),ERROR_ENTRY_NODEF(500),
-		ERROR_ENTRY_NODEF(600),ERROR_ENTRY_NODEF(700),ERROR_ENTRY_NODEF(800),ERROR_ENTRY_NODEF(900),
+		ERROR_ENTRY(600, "Неверная структура программы"),
+		ERROR_ENTRY(601, "Ошибочный оператор"),
+		ERROR_ENTRY(602, "Ошибка в выражении"),
+		ERROR_ENTRY(603, "Ошиюка в пораметрах функции"),
+		ERROR_ENTRY(604, "Ошибка в параметрах вызываемой функции"), ERROR_ENTRY_NODEF(700),ERROR_ENTRY_NODEF(800),ERROR_ENTRY_NODEF(900),
 	};
 	ERROR geterror(int id)
 	{

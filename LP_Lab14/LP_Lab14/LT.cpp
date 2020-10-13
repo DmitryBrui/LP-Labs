@@ -51,8 +51,10 @@ namespace LT
 		ofstream out(parm.out);
 		for (int i = 0; i < lextable.size; i++)
 		{
-			if(lextable.table[i].lexema == ';')
+			if (lextable.table[i].lexema == ';')
+			{
 				out << lextable.table[i].lexema << endl;
+			}
 			else
 				out << lextable.table[i].lexema;
 		}

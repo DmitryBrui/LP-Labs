@@ -46,13 +46,19 @@ namespace IT
 	}
 	void showTable(IdTable& idtable)
 	{
-		int i, numberOP = 0;
+		int i, j, numberOP = 0;
 		std::cout << std::setfill('-') << std::setw(87) << '-' << std::endl;
 		std::cout << "   №" << " | " << "Идентификатор" << " | " << "Тип данных" << " | " << "Тип идентификатора" << " | " << "Индекс в ТЛ" << " | " << "Значение    " << std::endl;
 		std::cout << std::setw(87) << '-' << std::endl;
-		for (i = 0; i < idtable.size; i++)
+		for (i = 0, j = 0; i < idtable.size; i++, j++)
 		{
-			std::cout << std::setfill('0') << std::setw(4) << std::right << i << " | ";
+			if (idtable.table[i].idtype == OP) 
+			{
+				numberOP++;
+				j--;
+				continue;
+			}
+			std::cout << std::setfill('0') << std::setw(4) << std::right << j << " | ";
 			std::cout << std::setfill(' ') << std::setw(13) << std::left << idtable.table[i].id << " | ";
 			switch (idtable.table[i].iddatatype)
 			{

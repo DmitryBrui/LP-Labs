@@ -18,6 +18,7 @@ namespace IT			// таблица идентификаторов
 		char	id[ID_MAXSIZE];		// индентификатор (автоматически усекается до ID_MAXSIZE)
 		IDDATATYPE	iddatatype;			// тип данных
 		IDTYPE		idtype;				// тип идентификатора
+		int countOfPar = 0;
 		union
 		{
 			int vint;					// значение integer
